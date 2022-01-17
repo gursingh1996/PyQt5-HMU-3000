@@ -17,8 +17,14 @@
     <bold>true</bold>
    </font>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -188,7 +194,7 @@
              <string notr="true">color: rgb(107, 107, 107);</string>
             </property>
             <property name="text">
-             <string>02:30 p.m.</string>
+             <string>18: 30</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -695,6 +701,9 @@ border-color: rgb(81, 81, 81);
        <number>0</number>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <property name="rightMargin">
+        <number>16</number>
+       </property>
        <item>
         <widget class="QFrame" name="frame_3">
          <property name="frameShape">
@@ -727,6 +736,7 @@ border-color: rgb(81, 81, 81);
            <widget class="QLabel" name="runtime_label">
             <property name="font">
              <font>
+              <pointsize>12</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -886,8 +896,15 @@ border-color: rgb(81, 81, 81);
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(238, 238, 238);
-color: rgb(81, 81, 81);</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(238, 238, 238);
+	color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}
+</string>
          </property>
          <property name="text">
           <string>DIAGNOSTICS</string>
@@ -910,8 +927,15 @@ color: rgb(81, 81, 81);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(238, 238, 238);
-color: rgb(81, 81, 81);</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(238, 238, 238);
+	color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}
+</string>
          </property>
          <property name="text">
           <string>WARNINGS</string>
@@ -934,8 +958,15 @@ color: rgb(81, 81, 81);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(238, 238, 238);
-color: rgb(81, 81, 81);</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(238, 238, 238);
+	color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}
+</string>
          </property>
          <property name="text">
           <string>ERRORS</string>
@@ -957,9 +988,19 @@ color: rgb(81, 81, 81);</string>
            <bold>true</bold>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(238, 238, 238);
-color: rgb(81, 81, 81);</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(238, 238, 238);
+	color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}
+</string>
          </property>
          <property name="text">
           <string>SETTINGS</string>
