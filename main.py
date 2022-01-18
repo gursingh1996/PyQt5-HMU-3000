@@ -1,49 +1,35 @@
 import sys
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.uic import loadUi
 
-from PySide2.QtGui import QIcon
-from PySide2 import QtCore
-from PySide2.QtUiTools import QUiLoader
-from PySide2.QtWidgets import QApplication, QPushButton, QLabel
-from PySide2.QtCore import QFile, QObject, QEvent, QTime
+class HomePage(QMainWindow):      #home page 
+    def __init__(self):
+        super(HomePage,self).__init__()
+        loadUi("./UI/homePage.ui",self)
+        self.btn_diagnostics.clicked.connect(self.gotoDiagnostics)
 
-    #this class removes the hover effect 
-class ButtonEventFilter(QObject):       
-    def eventFilter(self, obj, event):
-        if event.type() == QEvent.HoverEnter:
-            return True
-        return False
+    def gotoDiagnostics(self):
+        widget.setCurrentIndex(1)
 
-class Form(QObject):
-    
-    def __init__(self, ui_file, parent=None):
-        super(Form, self).__init__(parent)
-        ui_file = QFile(ui_file)
-        ui_file.open(QFile.ReadOnly)
-        loader = QUiLoader()
-        self.window = loader.load(ui_file)
-        ui_file.close()
-        btn_back = self.window.findChild(QPushButton, 'btn_back')
-        btn_back.setIcon(QIcon('./Assets/Icons/back.png'))
-        # btn_diagnostics = self.window.findChild(QPushButton, 'btn_diagnostics')
-        # btn_warnings = self.window.findChild(QPushButton, 'btn_warnings')
-        # btn_errors = self.window.findChild(QPushButton, 'btn_errors')
-        # btn_settings = self.window.findChild(QPushButton, 'btn_settings')
 
-            #removing hover effect
-        # filter = ButtonEventFilter(self)
-        # btn_diagnostics.installEventFilter(filter)
-        # btn_warnings.installEventFilter(filter)
-        # btn_errors.installEventFilter(filter)
-        # btn_settings.installEventFilter(filter)
+class DiagnosticsPage(QMainWindow): #diagnostics page
+    def __init__(self):
+        super(DiagnosticsPage,self).__init__()
+        loadUi("./UI/diagnosticsPage.ui",self)
+        self.btn_back.clicked.connect(self.gotoHome)
 
-        # time_label = self.window.findChild(QLabel, 'time_label')
-        # time_label.setText(QTime.currentTime().toString('hh:mm A'))
-
-        self.window.show()
-        # self.window.showFullScreen()
+    def gotoHome(self):
+        widget.setCurrentIndex(0)
 
 if __name__ == '__main__':
-    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
-    app = QApplication(sys.argv)
-    form = Form("./UI/diagnosticsPage.ui")
+    app=QApplication(sys.argv)
+    homePage = HomePage()
+    diagPage = DiagnosticsPage()
+    widget=QtWidgets.QStackedWidget()
+    widget.addWidget(homePage)
+    widget.addWidget(diagPage)
+    widget.setFixedWidth(800)
+    widget.setFixedHeight(480)
+    widget.show()
     sys.exit(app.exec_())
