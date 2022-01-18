@@ -974,7 +974,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btn_settings">
+        <widget class="QPushButton" name="btn_parameters">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1003,7 +1003,7 @@ QPushButton:pressed{
 </string>
          </property>
          <property name="text">
-          <string>SETTINGS</string>
+          <string>PARAMETERS</string>
          </property>
         </widget>
        </item>
