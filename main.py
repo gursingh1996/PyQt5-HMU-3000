@@ -1,5 +1,6 @@
 import sys
 
+from PySide2.QtGui import QIcon
 from PySide2 import QtCore
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QPushButton, QLabel
@@ -21,20 +22,22 @@ class Form(QObject):
         loader = QUiLoader()
         self.window = loader.load(ui_file)
         ui_file.close()
-        btn_diagnostics = self.window.findChild(QPushButton, 'btn_diagnostics')
-        btn_warnings = self.window.findChild(QPushButton, 'btn_warnings')
-        btn_errors = self.window.findChild(QPushButton, 'btn_errors')
-        btn_settings = self.window.findChild(QPushButton, 'btn_settings')
+        btn_back = self.window.findChild(QPushButton, 'btn_back')
+        btn_back.setIcon(QIcon('./Assets/Icons/back.png'))
+        # btn_diagnostics = self.window.findChild(QPushButton, 'btn_diagnostics')
+        # btn_warnings = self.window.findChild(QPushButton, 'btn_warnings')
+        # btn_errors = self.window.findChild(QPushButton, 'btn_errors')
+        # btn_settings = self.window.findChild(QPushButton, 'btn_settings')
 
             #removing hover effect
-        filter = ButtonEventFilter(self)
-        btn_diagnostics.installEventFilter(filter)
-        btn_warnings.installEventFilter(filter)
-        btn_errors.installEventFilter(filter)
-        btn_settings.installEventFilter(filter)
+        # filter = ButtonEventFilter(self)
+        # btn_diagnostics.installEventFilter(filter)
+        # btn_warnings.installEventFilter(filter)
+        # btn_errors.installEventFilter(filter)
+        # btn_settings.installEventFilter(filter)
 
-        time_label = self.window.findChild(QLabel, 'time_label')
-        time_label.setText(QTime.currentTime().toString('hh:mm A'))
+        # time_label = self.window.findChild(QLabel, 'time_label')
+        # time_label.setText(QTime.currentTime().toString('hh:mm A'))
 
         self.window.show()
         # self.window.showFullScreen()
@@ -42,5 +45,5 @@ class Form(QObject):
 if __name__ == '__main__':
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
     app = QApplication(sys.argv)
-    form = Form("./mainWindow.ui")
+    form = Form("./UI/diagnosticsPage.ui")
     sys.exit(app.exec_())
