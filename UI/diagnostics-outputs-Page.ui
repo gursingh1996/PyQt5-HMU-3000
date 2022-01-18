@@ -106,8 +106,14 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(75, 75, 75);</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(255, 255, 255);
+	color: rgb(75, 75, 75);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}</string>
          </property>
          <property name="text">
           <string>BACK</string>
@@ -240,7 +246,7 @@ color: rgb(75, 75, 75);</string>
                 <string notr="true">color: rgb(107, 107, 107);</string>
                </property>
                <property name="text">
-                <string>INPUT NUMBER</string>
+                <string>OUTPUT NUMBER</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -336,93 +342,12 @@ color: rgb(75, 75, 75);</string>
                <x>0</x>
                <y>0</y>
                <width>760</width>
-               <height>443</height>
+               <height>363</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout">
-              <item row="16" column="1">
-               <widget class="QLabel" name="label_28">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>BUTTON - START</string>
-                </property>
-               </widget>
-              </item>
-              <item row="14" column="0">
-               <widget class="QLabel" name="label_27">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>8</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="20" column="1">
-               <widget class="QLabel" name="label_30">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>BUTTON - BALE OUT PLATE DOWN</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_6">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>LIMIT - UPPER PLATE DOWN</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="1">
-               <widget class="QLabel" name="label_20">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>LIMIT - LOWER PLATE BACKWARD</string>
-                </property>
-               </widget>
-              </item>
               <item row="6" column="2">
-               <widget class="QLabel" name="inputIcon_4">
+               <widget class="QLabel" name="outputIcon_4">
                 <property name="text">
                  <string/>
                 </property>
@@ -434,15 +359,21 @@ color: rgb(75, 75, 75);</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
-               <widget class="Line" name="line_5">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+              <item row="0" column="2">
+               <widget class="QLabel" name="outputIcon_1">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/OutputOn.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
-               <widget class="QLabel" name="label_11">
+              <item row="14" column="1">
+               <widget class="QLabel" name="label_26">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -452,19 +383,58 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>LIMIT - LOCK APPLIED</string>
+                 <string>COIL - BALE OUT PLATE UP</string>
                 </property>
                </widget>
               </item>
-              <item row="9" column="1">
-               <widget class="Line" name="line_8">
+              <item row="10" column="2">
+               <widget class="QLabel" name="outputIcon_6">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="2">
+               <widget class="QLabel" name="outputIcon_9">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="Line" name="line_3">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
                </widget>
               </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_8">
+              <item row="4" column="2">
+               <widget class="QLabel" name="outputIcon_3">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="1">
+               <widget class="QLabel" name="label_28">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -474,7 +444,25 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>LIMIT - UPPER PLATE UP</string>
+                 <string>COIL - BALE OUT PLATE DOWN</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_12">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>3</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -490,19 +478,6 @@ color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
                  <string>7</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="12" column="2">
-               <widget class="QLabel" name="inputIcon_7">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -533,66 +508,10 @@ color: rgb(75, 75, 75);</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="1">
-               <widget class="Line" name="line_3">
+              <item row="5" column="1">
+               <widget class="Line" name="line_5">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="0">
-               <widget class="QLabel" name="label_18">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>5</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <widget class="QLabel" name="inputIcon_2">
-                <property name="minimumSize">
-                 <size>
-                  <width>110</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>110</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="2">
-               <widget class="QLabel" name="inputIcon_6">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -607,123 +526,14 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>LIMIT - BALE OUT PLATE UP</string>
+                 <string>COIL - LOWER PLATE BACKWARD</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0">
-               <widget class="QLabel" name="label_15">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>4</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="1">
-               <widget class="QLabel" name="label_14">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>LIMIT - LOCK REMOVED</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="2">
-               <widget class="QLabel" name="inputIcon_3">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="13" column="1">
-               <widget class="Line" name="line_10">
+              <item row="9" column="1">
+               <widget class="Line" name="line_8">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="19" column="1">
-               <widget class="Line" name="line_12">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="1">
-               <widget class="Line" name="line_6">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="0">
-               <widget class="QLabel" name="label_21">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>6</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="label_12">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>3</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="2">
-               <widget class="QLabel" name="inputIcon_5">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -734,8 +544,8 @@ color: rgb(75, 75, 75);</string>
                 </property>
                </widget>
               </item>
-              <item row="14" column="1">
-               <widget class="QLabel" name="label_26">
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_8">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -745,32 +555,7 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>LIMIT - BALE OUT PLATE DOWN</string>
-                </property>
-               </widget>
-              </item>
-              <item row="16" column="0">
-               <widget class="QLabel" name="label_31">
-                <property name="font">
-                 <font>
-                  <pointsize>13</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(75, 75, 75);</string>
-                </property>
-                <property name="text">
-                 <string>9</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="17" column="1">
-               <widget class="Line" name="line_11">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <string>COIL - UPPER PLATE DOWN</string>
                 </property>
                </widget>
               </item>
@@ -792,10 +577,92 @@ color: rgb(75, 75, 75);</string>
                 </property>
                </widget>
               </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="label_18">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>5</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLabel" name="label_20">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>COIL - LOWER PLATE FORWARD</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>4</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
               <item row="11" column="1">
                <widget class="Line" name="line_9">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="0">
+               <widget class="QLabel" name="label_27">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>8</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="2">
+               <widget class="QLabel" name="outputIcon_5">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/OutputOn.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -810,12 +677,38 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>LIMIT - LOWER PLATE FORWARD</string>
+                 <string>COIL - LOCK REMOVE</string>
                 </property>
                </widget>
               </item>
-              <item row="18" column="0">
-               <widget class="QLabel" name="label_32">
+              <item row="14" column="2">
+               <widget class="QLabel" name="outputIcon_8">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="2">
+               <widget class="QLabel" name="outputIcon_7">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/OutputOn.png</pixmap>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="label_11">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -825,10 +718,65 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>10</string>
+                 <string>COIL - UPPER PLATE UP</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>COIL - LOCK APPLY</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="outputIcon_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>110</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>110</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Assets/Icons/OutputOn.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(75, 75, 75);</string>
+                </property>
+                <property name="text">
+                 <string>MOTOR</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -839,8 +787,8 @@ color: rgb(75, 75, 75);</string>
                 </property>
                </widget>
               </item>
-              <item row="18" column="1">
-               <widget class="QLabel" name="label_29">
+              <item row="16" column="0">
+               <widget class="QLabel" name="label_31">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -850,12 +798,29 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>BUTTON - STOP</string>
+                 <string>9</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="20" column="0">
-               <widget class="QLabel" name="label_33">
+              <item row="7" column="1">
+               <widget class="Line" name="line_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="1">
+               <widget class="Line" name="line_10">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QLabel" name="label_21">
                 <property name="font">
                  <font>
                   <pointsize>13</pointsize>
@@ -865,72 +830,7 @@ color: rgb(75, 75, 75);</string>
                  <string notr="true">color: rgb(75, 75, 75);</string>
                 </property>
                 <property name="text">
-                 <string>11</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="inputIcon_1">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="14" column="2">
-               <widget class="QLabel" name="inputIcon_8">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="16" column="2">
-               <widget class="QLabel" name="inputIcon_9">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="18" column="2">
-               <widget class="QLabel" name="inputIcon_10">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/NoSignal.png</pixmap>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="20" column="2">
-               <widget class="QLabel" name="inputIcon_11">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../Assets/Icons/InputBtnPressed.png</pixmap>
+                 <string>6</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -994,7 +894,70 @@ color: rgb(75, 75, 75);</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btn_inputs">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	color: rgb(75, 75, 75);
+	background-color: rgb(248, 248, 248);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}</string>
+            </property>
+            <property name="text">
+             <string>INPUTS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -1007,10 +970,7 @@ color: rgb(75, 75, 75);</string>
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item row="0" column="0">
+          <item>
            <widget class="QLabel" name="label_38">
             <property name="minimumSize">
              <size>
@@ -1042,79 +1002,14 @@ color: rgb(75, 75, 75);</string>
              <enum>QFrame::Sunken</enum>
             </property>
             <property name="text">
-             <string>INPUTS</string>
+             <string>OUTPUTS</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_39">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_3">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	color: rgb(75, 75, 75);
-	background-color: rgb(248, 248, 248);
-}</string>
-            </property>
-            <property name="text">
-             <string>OUTPUTS</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
+          <item>
            <widget class="QLabel" name="label_40">
             <property name="text">
              <string/>

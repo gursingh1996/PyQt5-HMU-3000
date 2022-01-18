@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QScroller, QScrollArea
 from PyQt5.uic import loadUi
 
 class HomePage(QMainWindow):      #home page 
@@ -13,22 +13,45 @@ class HomePage(QMainWindow):      #home page
         widget.setCurrentIndex(1)
 
 
-class DiagnosticsPage(QMainWindow): #diagnostics page
+class DiagnosticsInputsPage(QMainWindow): #diagnostics input page
     def __init__(self):
-        super(DiagnosticsPage,self).__init__()
-        loadUi("./UI/diagnosticsPage.ui",self)
-        self.btn_back.clicked.connect(self.gotoHome)
+        super(DiagnosticsInputsPage,self).__init__()
+        loadUi("./UI/diagnostics-inputs-Page.ui",self)
+        self.btn_back.clicked.connect(self.gotoHome)    #call Back btn fuction
+        self.btn_outputs.clicked.connect(self.gotoDiagOut)
+        scroller = self.findChild(QScrollArea, "scrollArea")
+        QScroller.grabGesture(scroller.viewport(), QScroller.LeftMouseButtonGesture)
 
     def gotoHome(self):
         widget.setCurrentIndex(0)
 
+    def gotoDiagOut(self):
+        widget.setCurrentIndex(2)
+
+class DiagnosticsOutputsPage(QMainWindow): #diagnostics output page
+    def __init__(self):
+        super(DiagnosticsOutputsPage,self).__init__()
+        loadUi("./UI/diagnostics-outputs-Page.ui",self)
+        self.btn_back.clicked.connect(self.gotoHome)    #call Back btn fuction
+        self.btn_inputs.clicked.connect(self.gotoDiagIn)
+        scroller = self.findChild(QScrollArea, "scrollArea")
+        QScroller.grabGesture(scroller.viewport(), QScroller.LeftMouseButtonGesture)
+
+    def gotoHome(self):
+        widget.setCurrentIndex(0)
+
+    def gotoDiagIn(self):
+        widget.setCurrentIndex(1)
+
 if __name__ == '__main__':
     app=QApplication(sys.argv)
     homePage = HomePage()
-    diagPage = DiagnosticsPage()
+    diagInPage = DiagnosticsInputsPage()
+    diagOutPage = DiagnosticsOutputsPage()
     widget=QtWidgets.QStackedWidget()
     widget.addWidget(homePage)
-    widget.addWidget(diagPage)
+    widget.addWidget(diagInPage)
+    widget.addWidget(diagOutPage)
     widget.setFixedWidth(800)
     widget.setFixedHeight(480)
     widget.show()
