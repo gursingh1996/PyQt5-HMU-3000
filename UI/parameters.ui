@@ -337,7 +337,7 @@ QPushButton:pressed{
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>-158</y>
+               <y>0</y>
                <width>784</width>
                <height>540</height>
               </rect>
@@ -381,7 +381,7 @@ QPushButton:pressed{
                     <string notr="true">color: rgb(75, 75, 75);</string>
                    </property>
                    <property name="text">
-                    <string>UPPER PLATE DOWN TIME (sec)</string>
+                    <string>UPPER PLATE DOWN MAX TIME (sec)</string>
                    </property>
                   </widget>
                  </item>
@@ -709,7 +709,7 @@ color: rgb(33, 33, 33);</string>
                     <string notr="true">color: rgb(75, 75, 75);</string>
                    </property>
                    <property name="text">
-                    <string>UPPER PLATE UP TIME (sec)</string>
+                    <string>UPPER PLATE UP MAX TIME (sec)</string>
                    </property>
                   </widget>
                  </item>
@@ -1037,7 +1037,7 @@ color: rgb(33, 33, 33);</string>
                     <string notr="true">color: rgb(75, 75, 75);</string>
                    </property>
                    <property name="text">
-                    <string>LOWER PLATE FORWARD TIME (sec)</string>
+                    <string>LOWER PLATE FORWARD MAX TIME (sec)</string>
                    </property>
                   </widget>
                  </item>
@@ -1365,7 +1365,7 @@ color: rgb(33, 33, 33);</string>
                     <string notr="true">color: rgb(75, 75, 75);</string>
                    </property>
                    <property name="text">
-                    <string>LOWER PLATE BACKWARD TIME (sec)</string>
+                    <string>LOWER PLATE BACKWARD MAX TIME (sec)</string>
                    </property>
                   </widget>
                  </item>

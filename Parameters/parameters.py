@@ -13,3 +13,9 @@ class param:
         # Writing to sample.json
         with open("./Parameters/parameters.json", "w") as outfile:
             outfile.write(json_object)
+
+    def getDataName():
+        with open('./Parameters/parameter_name.json', 'r') as openfile:
+            json_object = json.load(openfile)
+
+        return json_object

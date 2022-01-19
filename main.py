@@ -126,9 +126,12 @@ class ParametersInputPage(QMainWindow): #diagnostics input page
         self.digits=0
         super(ParametersInputPage,self).__init__()
         loadUi("./UI/parameter-input.ui",self)
+        self.startUpdateThread()
         self.label_paramVal.setText(str(self.param))
         self.btn_ok.clicked.connect(self.updateParameters)
         self.btn_cancel.clicked.connect(self.gotoParam)
+
+        self.paramameterNames = param.getDataName()
 
         btn_num = [0]*10
         for i in range(10):
@@ -182,6 +185,31 @@ class ParametersInputPage(QMainWindow): #diagnostics input page
             self.param = int(self.param/10)
             self.digits -= 1
             self.label_paramVal.setText(str(self.param))
+        
+
+#reloads parameter values when ever the page is clicked
+    def paramUpdateThread(self):
+        sleep(0.1)    #let the widget load 
+        self.boolReload = True
+        while True:
+            try:
+                if (widget.currentIndex()==4) and self.boolReload==True:
+                    self.boolReload = False
+                    self.label_parameter_name.setText(self.paramameterNames[str(parameterNumber)])
+                    self.label_old_parameter_value.setText(parameters[str(parameterNumber)])
+                
+                elif (widget.currentIndex()!=4) and self.boolReload==False:
+                    self.boolReload = True
+            
+            except:
+                pass
+            
+            sleep(0.1)
+
+    def startUpdateThread(self):
+        thread = threading.Thread(target=self.paramUpdateThread)
+        thread.daemon = 1
+        thread.start()
 
 if __name__ == '__main__':
     app=QApplication(sys.argv)
