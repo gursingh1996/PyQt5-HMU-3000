@@ -890,7 +890,7 @@ border-color: rgb(81, 81, 81);
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -921,7 +921,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -952,7 +952,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -983,7 +983,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
