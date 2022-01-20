@@ -1,0 +1,12 @@
+all_ok = 5
+LOWER_PLATE_not_back = 1
+BALE_PLATE_not_down = 2
+lock_not_out = 3
+UPPER_PLATE_not_up = 4
+lower_plate_back_pressure_reached = 6
+reset_pressed = 7
+upper_plate_back_pressure_reached = 8
+upper_plate_forward_pressure_reached = 9
+bale_plate_down_pressure_reached = 10
+lower_plate_forward_pressure_reached = 11
+bale_plate_up_pressure_reached = 12

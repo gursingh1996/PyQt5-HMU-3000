@@ -246,7 +246,7 @@ QPushButton:pressed{
                 <string notr="true">color: rgb(107, 107, 107);</string>
                </property>
                <property name="text">
-                <string>OUTPUT NUMBER</string>
+                <string>OUTPUT No.</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>

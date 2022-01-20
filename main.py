@@ -1,26 +1,59 @@
 import threading
 import sys
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QScroller, QScrollArea, QPushButton, QLabel
 from PyQt5.uic import loadUi
 from Parameters.parameters import param
 from time import sleep
+from Libraries.Machine_operation.variables import video_number
 
 global parameters
 global parameterNumber
 
 class HomePage(QMainWindow):      #home page 
+    videoName = [
+        "Upper-plate-down",
+        "Lock-apply",
+        "Lower-plate-forward",
+        "Lower-plate-backward",
+        "Lock-out",
+        "Upper-plate-up",
+        "Bale-plate-up",
+        "Bale-plate-down"
+    ]
     def __init__(self):
         super(HomePage,self).__init__()
         loadUi("./UI/homePage.ui",self)
         self.btn_diagnostics.clicked.connect(self.gotoDiagnostics)
         self.btn_parameters.clicked.connect(self.gotoParam)
+        self.startVideoThread()
 
     def gotoDiagnostics(self):
         widget.setCurrentIndex(1)
 
     def gotoParam(self):
         widget.setCurrentIndex(3)
+
+    def videoThread(self):
+        sleep(0.1) #let it load
+        while True:
+            try:
+                if widget.currentIndex()==0:
+                    for i in range(16):
+                        self.video_label.setPixmap(QPixmap(f'./Assets/Frames/{HomePage.videoName[video_number]}/{i+1}.png'))
+                        sleep(0.07)
+                
+                else:
+                    sleep(0.1)
+            
+            except:
+                pass
+
+    def startVideoThread(self):
+        thread = threading.Thread(target=self.videoThread)
+        thread.daemon = 1
+        thread.start()
 
 
 class DiagnosticsInputsPage(QMainWindow): #diagnostics input page
@@ -170,10 +203,14 @@ class ParametersInputPage(QMainWindow): #diagnostics input page
 
     def btn_num_pressed(self, btnNumber):
         if self.digits < 4:
-            self.param *= 10
-            self.digits += 1
-            self.param += btnNumber
-            self.label_paramVal.setText(str(self.param))
+            if self.param == 0 and btnNumber==0:
+                pass
+                
+            else:
+                self.param *= 10
+                self.digits += 1
+                self.param += btnNumber
+                self.label_paramVal.setText(str(self.param))
 
     def btnClr_pressed(self):
         self.param=0
