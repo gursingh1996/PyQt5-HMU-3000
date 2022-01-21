@@ -4,6 +4,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QScroller, QScrollArea, QPushButton, QLabel
 from PyQt5.uic import loadUi
+from PyQt5.QtCore import QDate, QTime
 from Parameters.parameters import param
 from time import sleep
 from Libraries.Machine_operation.variables import video_number
@@ -28,12 +29,26 @@ class HomePage(QMainWindow):      #home page
         self.btn_diagnostics.clicked.connect(self.gotoDiagnostics)
         self.btn_parameters.clicked.connect(self.gotoParam)
         self.startVideoThread()
+        self.startDateTimeThread()
 
     def gotoDiagnostics(self):
         widget.setCurrentIndex(1)
 
     def gotoParam(self):
         widget.setCurrentIndex(3)
+
+    def dateTimeThread(self):       #updates every second
+        sleep(0.1)
+        while True:
+            try:
+                if widget.currentIndex()==0:
+                    self.date_label.setText(QDate.currentDate().toString('dd-MMM-yyyy'))
+                    self.time_label.setText(QTime.currentTime().toString('hh:mm a'))
+                
+            except:     #ignore exceptions
+                pass
+        
+            sleep(1)
 
     def videoThread(self):
         sleep(0.1) #let it load
@@ -52,6 +67,11 @@ class HomePage(QMainWindow):      #home page
 
     def startVideoThread(self):
         thread = threading.Thread(target=self.videoThread)
+        thread.daemon = 1
+        thread.start()
+
+    def startDateTimeThread(self):
+        thread = threading.Thread(target=self.dateTimeThread)
         thread.daemon = 1
         thread.start()
 
