@@ -1007,6 +1007,37 @@ QPushButton:pressed{
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgb(238, 238, 238);
+	color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color : blue;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>SETTINGS</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
