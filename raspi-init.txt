@@ -20,8 +20,13 @@
 9. sudo nano /etc/rc.local		add the code below before 'exit 0':
 	/home/pi/runCode.sh
 
-10. export DISPLAY=:0
-11. sudo reboot
+10. sudo apt -y install rpd-plym-splash
+11. sudo raspi-config
+	-system options
+		--Splash screen -> yes
+	
+12. export DISPLAY=:0
+13. sudo reboot
 
 
 
