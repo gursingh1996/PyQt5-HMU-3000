@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+import os
 import threading
 import sys
 from PyQt5 import QtWidgets
@@ -269,6 +271,7 @@ class ParametersInputPage(QMainWindow): #diagnostics input page
         thread.start()
 
 if __name__ == '__main__':
+    os.chdir('/home/pi')
     app=QApplication(sys.argv)
     homePage = HomePage()
     diagInPage = DiagnosticsInputsPage()
