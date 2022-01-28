@@ -31,7 +31,7 @@ class HomePage(QMainWindow):      #home page
         self.btn_diagnostics.clicked.connect(self.gotoDiagnostics)
         self.btn_parameters.clicked.connect(self.gotoParam)
         self.startVideoThread()
-        self.startDateTimeThread()
+        #self.startDateTimeThread()
 
     def gotoDiagnostics(self):
         widget.setCurrentIndex(1)
