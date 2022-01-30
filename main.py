@@ -54,12 +54,16 @@ class HomePage(QMainWindow):      #home page
 
     def videoThread(self):
         sleep(0.1) #let it load
+        video_=0
         while True:
             try:
                 if widget.currentIndex()==0:
                     for i in range(16):
-                        self.video_label.setPixmap(QPixmap(f'./Assets/Frames/{HomePage.videoName[video_number]}/{i+1}.png'))
+                        self.video_label.setPixmap(QPixmap(f'./Assets/Frames/{HomePage.videoName[video_]}/{i+1}.png'))
                         sleep(0.07)
+                    
+                    video_+=1
+                    if video_>7: video_=0
                 
                 else:
                     sleep(0.1)
