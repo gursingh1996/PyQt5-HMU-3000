@@ -8,7 +8,7 @@
 		--SSH -> yes
 
 2. sudo apt-get update
-3. sudo apt-get -y install xserver-xorg xinit x11-xserver-utils python3-pyqt5 git
+3. sudo apt-get -y install xserver-xorg xinit x11-xserver-utils python3-pyqt5 git rpd-plym-splash
 4. git init
 5. git pull https://github.com/gursingh1996/PyQt5-HMU-3000.git master
 6. chmod +x main.py
@@ -16,13 +16,13 @@
 8. sudo nano /etc/rc.local		add the code below before 'exit 0':
 	/home/pi/runCode.sh
 
-9. sudo apt -y install rpd-plym-splash
-10. sudo raspi-config
+9. sudo raspi-config
 	-system options
 		--Splash screen -> yes
+
+10 sudo mv splash.png /usr/share/plymouth/themes/pix/
 	
-11. export DISPLAY=:0
-12. sudo reboot
+11. sudo reboot
 
 
 
