@@ -277,6 +277,7 @@ class ParametersInputPage(QMainWindow): #diagnostics input page
 if __name__ == '__main__':
     os.chdir('/home/pi')
     app=QApplication(sys.argv)
+    file = open("started", "x")     #make a new file 
     homePage = HomePage()
     diagInPage = DiagnosticsInputsPage()
     diagOutPage = DiagnosticsOutputsPage()
